@@ -25,6 +25,7 @@ export default function Chat() {
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setLoading(true);
+    scrollToBottom();
 
     try {
       const response = await fetch(backendUrl, {
@@ -72,6 +73,7 @@ export default function Chat() {
       console.error(err);
     } finally {
       setLoading(false);
+      scrollToBottom();
     }
   };
 
