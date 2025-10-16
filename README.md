@@ -20,6 +20,3 @@ Run the app. It is accessed on port 80 and requires port 8000 to hit the API
 ```bash
 docker run -p 80:80 -p 8000:8000 myapp:latest
 ```
-
-## Improvements
-- Use Nginx to have better routing all through a 443 SSH connection
