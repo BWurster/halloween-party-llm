@@ -16,4 +16,6 @@ ollama pull llama3.2
 
 echo "Starting Nginx and Uvicorn..."
 # Start supervisord to run Nginx and Uvicorn
-exec supervisord -n
+# Start Supervisor
+exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
+

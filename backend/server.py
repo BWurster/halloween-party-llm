@@ -24,7 +24,11 @@ SYSTEM_PROMPT = {
 # In-memory conversation memory (simple example)
 # conversation_history = [SYSTEM_PROMPT]
 
-@app.post("/chat")
+@app.get("/api/test")
+async def test_endpoint():
+    return {"message": "Hello, World!"}
+
+@app.post("/api/chat")
 async def chat_endpoint(request: Request):
     data = await request.json()
     user_message = data.get("message", "")

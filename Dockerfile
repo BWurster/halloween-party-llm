@@ -39,6 +39,11 @@ COPY backend/ ./
 # Install Python dependencies here
 RUN pip install --no-cache-dir -r requirements.txt
 
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Add this line to remove the default nginx config if it exists
+RUN rm -f /etc/nginx/sites-enabled/default
+
 # Copy supervisord config and start script
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY start.sh /start.sh

@@ -5,8 +5,7 @@ interface Message {
   content: string;
 }
 
-const backendPort = 8000;
-const backendUrl = `http://${window.location.hostname}:${backendPort}/chat`;
+const backendUrl = `/api/chat`;
 
 export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
